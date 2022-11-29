@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-import {Container} from 'react-bootstrap';
+//import {Container} from 'react-bootstrap';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 
-import Header from './components/Header';
-import Navbar from './components/Navbar';
-import Jumbotron from './components/Jumbotron';
-import PostSection from './components/PostSection';
-import Footer from './components/Footer';
+import './App.css';
+
+import Home from './pages/Home';
+import About from './pages/About';
 
 function App() {
   return (
     <>
-    <Container>
-      <Header />
-      <Navbar />
-      <Jumbotron />
-      <PostSection />
-    </Container>
-    <Footer />
+      <Routes>
+        <Route path="/" element={<Home />} exact />
+        <Route path="/about" element={<About />} />
+      </Routes>
     </>
   );
 }
